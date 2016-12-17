@@ -1,40 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_create"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context="cl.adachersoft.sharelicious.views.create.CreateActivity">
 
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:padding="16dp"
-        android:layout_height="wrap_content" />
-
-
-    <EditText
-      android:id="@+id/title"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:hint="Title "
         android:layout_height="wrap_content"
-        android:padding="16dp"
+        android:orientation="vertical">
 
-        />
-    <EditText
-        android:id="@+id/description"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:hint="Decriptions"
+        <fragment
+            android:id="@+id/photoFragment"
+            android:name="cl.adachersoft.sharelicious.PhotoFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout="@layout/fragment_photo" />
 
-        />
+        <EditText
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Título"
+            android:padding="16dp" />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
+        <EditText
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lines="5"
+            android:hint="Descripción" />
 
+        <LinearLayout
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
+            <Spinner
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
 
-</LinearLayout>
+            <CheckBox
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:text="Utilizar Ubicación"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</ScrollView>
